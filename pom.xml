@@ -2,15 +2,15 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.sangame.message</groupId>
-	<artifactId>thor-web</artifactId>
-	<version>2.5.0-SNAPSHOT</version>
+	<groupId>web_test</groupId>
+	<artifactId>web_test</artifactId>
+	<version>1.0.0-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
 		<build.version>0</build.version>
-		<product.version>2.5.0</product.version>
-		<product.name>thor-web</product.name>
+		<product.version>1.0.0</product.version>
+		<product.name>web_test</product.name>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
