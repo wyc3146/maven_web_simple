@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <version>
+        <prop key="product.version">
+            ${product.version}
+        </prop>
+        <prop key="build.number">
+            ${build.version}
+        </prop>
+    </version>
+
+    <settings>
+		<prop key="domain.resource">
+			https://${domain.resource}
+		</prop>
+		<prop key="domain.quote">
+			//${domain.quote}
+		</prop>
+		<prop key="domain.mobile">
+			http://${domain.mobile}
+		</prop>
+		<prop key="domain.kuaixun">
+			https://${domain.kuaixun}
+		</prop>
+		<prop key="domain.kp">
+			https://${domain.kp}
+		</prop>
+		<prop key="domain.quote.api">
+			https://${domain.quote.api}
+		</prop>
+	</settings>
+
+</config>
