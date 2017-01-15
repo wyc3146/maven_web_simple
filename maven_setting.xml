@@ -1,0 +1,34 @@
+<profile>
+    <id>web_test</id>
+    <activation>
+        <activeByDefault>false</activeByDefault>
+    </activation>
+    <repositories>
+        <repository>
+            <id>sangame-repo</id>
+            <name>Sangame Repository</name>
+            <url>http://maven.sangame.com</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <properties>
+        <profiles.active>web_test</profiles.active>
+        <product.version>1.0.0</product.version>
+        <build.version>100</build.version>
+
+        <db.mysql.address>127.0.0.1</db.mysql.address>
+        <db.mysql.port>3306</db.mysql.port>
+        <db.mysql.database>test</db.mysql.database>
+        <db.mysql.test.username>root</db.mysql.test.username>
+        <db.mysql.test.password>hello</db.mysql.test.password>
+
+        <apps.log.level>debug</apps.log.level>
+        <apps.log.base>e:\/logs\/apps\/thor</apps.log.base>
+
+    </properties>
+</profile>

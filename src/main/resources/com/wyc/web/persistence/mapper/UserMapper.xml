@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.wyc.web.persistence.mapper.UserMapper">
+    <sql id="columns">
+        id,
+        creator,
+        created_at,
+        modifier,
+        updated_at,
+        username,
+        age,
+        title
+    </sql>
+
+    <sql id="fields">
+        id,
+        creator,
+        created_at as createdAt,
+        modifier,
+        updated_at as updatedAt,
+        username,
+        age,
+        title
+    </sql>
+
+    <insert id="insert" parameterType="User" useGeneratedKeys="true" >
+        INSERT INTO test_user
+        (<include refid="columns"/>)
+        values
+        (#{id}, #{creator}, now(), null, null, #{username}, #{age}, #{title})
+    </insert>
+
+    <select id="find" parameterType="integer" resultType="User">
+        SELECT <include refid="fields"/>
+        FROM test_user
+        WHERE id = #{id}
+    </select>
+
+    <!--
+    <update id="update" parameterType="ApiUser">
+        UPDATE mc_api_user SET
+        <if test="userName != null and userName != ''">username = #{userName},</if>
+        <if test="password != null and password != ''">password = #{password},</if>
+        <if test="memo != null and memo != ''">memo = #{memo},</if>
+        modifier = #{modifier},
+        updated_at = now()
+        WHERE id = #{id}
+    </update>
+
+    <delete id="delete" parameterType="long">
+        DELETE FROM mc_api_user WHERE id = #{id}
+    </delete>
+
+    <delete id="deleteByUserName" parameterType="string">
+        DELETE FROM mc_api_user WHERE username = #{userName}
+    </delete>
+
+    <select id="find" parameterType="long" resultType="ApiUser">
+        SELECT <include refid="fields"/>
+        FROM mc_api_user
+        WHERE id = #{id}
+    </select>
+
+    <select id="findByUserName" parameterType="string" resultType="ApiUser">
+        SELECT <include refid="fields" />
+        FROM mc_api_user
+        WHERE username = #{username}
+    </select>
+
+    <select id="findAll" resultType="ApiUser">
+        SELECT <include refid="fields"/>
+        FROM mc_api_user
+    </select>-->
+
+</mapper>

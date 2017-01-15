@@ -10,4 +10,17 @@
         <constructor-arg index="0" value="config.properties" />
     </bean>
 
+    <!-- 扫描指定包下的文件，初始化注解加载的bean -->
+    <context:component-scan base-package="com.wyc.web" />
+    <context:annotation-config />
+
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="locations">
+            <list>
+                <value>classpath:db.properties</value>
+            </list>
+        </property>
+    </bean>
+    <import resource="mysqlContext.xml" />
+
 </beans>
