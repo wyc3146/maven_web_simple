@@ -9,10 +9,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author wangyongcan
@@ -36,6 +39,15 @@ public class HelloController extends GenericController {
         model.addAttribute("name","wyc");
         // 简单的模板处理，会匹配到com.wyc.web.action.view.SimpleViewResolver
         return "/my_name.simple";
+    }
+
+    @ResponseBody
+    @RequestMapping(value = {"queryJson"}, method = RequestMethod.GET)
+    public Map<String,Object> queryJson() {
+        Map<String,Object> map = new HashMap<String, Object>();
+        map.put("name","wyc");
+        map.put("school","zufe");
+        return map;
     }
 
 }
